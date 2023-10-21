@@ -31,7 +31,7 @@ class Object(pygame.sprite.Sprite):
 
 
     def update(self):
-        pass
+        self.rect.top += 1
 
 
 
