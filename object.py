@@ -1,5 +1,6 @@
 from constants import *
 import pygame
+import random
 
 
 class Object(pygame.sprite.Sprite):
@@ -26,7 +27,7 @@ class Object(pygame.sprite.Sprite):
 
 
     def update(self):
-        self.rect = self.rect.move(0, selfspeed)
+        self.rect = self.rect.move(0, self.speed)
 
-        if self.rect.top >= GAME_HEIGHT:
-            self.kill()
+        if self.rect.bottom == GAME_HEIGHT:
+            self.y = 0
