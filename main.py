@@ -1,13 +1,14 @@
 from constants import *
 import pygame
-
+import object
 
 
 clock = pygame.time.Clock()
 surface = pygame.display.set_mode((GAME_WIDTH, GAME_HEIGHT))
 
-
-
+obj = object.Object(20, 20)
+player_group = pygame.sprite.Group()
+player_group.add(obj)
 
 pygame.init()
 
@@ -31,14 +32,14 @@ def main():
 def draw():
     surface.fill((0, 0, 10))#background
 
-    bm.draw(surface)
+    player_group.draw(surface)
 
 
     pygame.display.flip()
 
 
 def update():
-    pass
+    player_group.update()
 
 
 
