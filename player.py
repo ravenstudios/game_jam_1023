@@ -17,7 +17,6 @@ class Player(pygame.sprite.Sprite):
         self.rect = pygame.Rect(self.image.get_rect())
 
         self.rect.bottomleft = ((GAME_WIDTH // 2) - (BLOCK_SIZE // 2), GAME_HEIGHT)
-
         self.speed = 5
 
 
