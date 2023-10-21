@@ -8,12 +8,13 @@ surface = pygame.display.set_mode((GAME_WIDTH, GAME_HEIGHT))
 
 
 
-
+sm = state_manager.State_manager()
 pygame.init()
 
-sm = state_manager.State_manager()
+
 
 def main():
+
     running = True
 
     while running:
@@ -21,6 +22,16 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+
+            if event.type == pygame.KEYUP:
+                sm.set_event_key(event.key)
+
+            # sm.set_event_key(event.key)
+            if event.type == pygame.KEYDOWN:
+                keys = pygame.key.get_pressed()
+                # sm.set_event_key(event.key)
+                if event.key == pygame.K_q:
+                    running = False
         draw()
         update()
 
