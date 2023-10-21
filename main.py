@@ -1,18 +1,17 @@
 from constants import *
 import pygame
-import object
+import state_manager
 
 
 clock = pygame.time.Clock()
 surface = pygame.display.set_mode((GAME_WIDTH, GAME_HEIGHT))
 
-obj = object.Object(20, 20)
-player_group = pygame.sprite.Group()
-player_group.add(obj)
+
+
 
 pygame.init()
 
-
+sm = state_manager.State_manager()
 
 def main():
     running = True
@@ -31,15 +30,12 @@ def main():
 
 def draw():
     surface.fill((0, 0, 10))#background
-
-    player_group.draw(surface)
-
-
+    sm.draw(surface)
     pygame.display.flip()
 
 
 def update():
-    player_group.update()
+    sm.update()
 
 
 
